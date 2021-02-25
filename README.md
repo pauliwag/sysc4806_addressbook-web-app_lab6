@@ -6,13 +6,13 @@
 
 ***Travis CI builds***
 
-https://travis-ci.com/github/pauliwag/sysc4806_addressbook-web-app/builds
+https://travis-ci.com/github/pauliwag/sysc4806_addressbook-web-app_lab6/builds
 
 ---
 
 ***Heroku deploy***
 
-https://addressbook-web-app.herokuapp.com/
+https://addressbook-web-app-lab6.herokuapp.com/
 
 ---
 
