@@ -12,11 +12,14 @@ import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+/**
+ * @author Paul Roode
+ */
 @SpringBootTest
 @AutoConfigureMockMvc
 public class MockMvcTest {
 
-    private static final String DEFAULT_ADDRESSBOOK_HEADER = "AddressBook ID # 3";
+    private static final String VIEW_ADDRESSBOOK_FORM_TEXT = "View AddressBook ID #";
 
     @Autowired
     private MockMvc mockMvc;
@@ -29,7 +32,7 @@ public class MockMvcTest {
     @Test
     public void shouldReturnDefaultAddressBookHeader() throws Exception {
         this.mockMvc.perform(get("/")).andDo(print()).andExpect(status().isOk())
-                .andExpect(content().string(containsString(DEFAULT_ADDRESSBOOK_HEADER)));
+                .andExpect(content().string(containsString(VIEW_ADDRESSBOOK_FORM_TEXT)));
     }
 
 }
