@@ -4,6 +4,9 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author Paul Roode
+ */
 @Entity
 public class AddressBook {
 
@@ -28,6 +31,16 @@ public class AddressBook {
 
     public void setBuddies(List<BuddyInfo> buddies) {
         this.buddies = buddies;
+    }
+
+    public void addBuddy(BuddyInfo buddy) {
+        if (buddy != null) {
+            buddies.add(buddy);
+        }
+    }
+
+    public void removeBuddy(BuddyInfo buddy) {
+        buddies.remove(buddy);
     }
 
     public long getId() {

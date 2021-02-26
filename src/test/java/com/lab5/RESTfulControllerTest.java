@@ -12,13 +12,16 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+/**
+ * @author Paul Roode
+ */
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @AutoConfigureMockMvc
 public class RESTfulControllerTest {
 
-    private static final String ADDRESS_BOOKS_ROOT_ENDPOINT = "addressBooks";
-    private static final String BUDDY_INFOS_ROOT_ENDPOINT = "buddyInfos";
+    private static final String ADDRESSBOOKS_ROOT_ENDPOINT = "addressBooks";
+    private static final String BUDDYINFOS_ROOT_ENDPOINT = "buddies";
 
     @Autowired
     private MockMvc mvc;
@@ -50,7 +53,7 @@ public class RESTfulControllerTest {
     public void createAddressBook() {
         long count = addressBookRepository.count();
         try {
-            mvc.perform(MockMvcRequestBuilders.post("/" + ADDRESS_BOOKS_ROOT_ENDPOINT)
+            mvc.perform(MockMvcRequestBuilders.post("/" + ADDRESSBOOKS_ROOT_ENDPOINT)
                     .accept(MediaType.APPLICATION_JSON)
                     .contentType(MediaType.APPLICATION_JSON)
                     .content("{}"))
@@ -64,7 +67,7 @@ public class RESTfulControllerTest {
     @Test
     public void deleteAddressBook() {
         try {
-            mvc.perform(MockMvcRequestBuilders.delete("/" + ADDRESS_BOOKS_ROOT_ENDPOINT + "/" + addressBook.getId()))
+            mvc.perform(MockMvcRequestBuilders.delete("/" + ADDRESSBOOKS_ROOT_ENDPOINT + "/" + addressBook.getId()))
                     .andExpect(status().isNoContent());
         } catch (Exception e) {
             e.printStackTrace();

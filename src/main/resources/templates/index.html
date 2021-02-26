@@ -1,15 +1,27 @@
 <!DOCTYPE HTML>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="https://www.thymeleaf.org" lang="en">
 <head>
-    <title>Lab 4</title>
+    <title>Lab 6 - Landing Page</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="index.js"></script>
 </head>
-<body>
-<div th:each="addressBook: ${addressBooks}">
-    <h1 th:text="'AddressBook ID # ' + ${addressBook.id}"></h1>
-    <ul th:each="buddy: ${addressBook.buddies}">
-        <li th:text="${buddy}"></li>
-    </ul>
-</div>
+<body id="body">
+    <h1>Create an AddressBook</h1>
+    <form id="create" action="#" th:action="@{/addressbook}" method="POST">
+        <p><input type="submit" value="Create"/></p>
+    </form>
+    <hr style="opacity: 0.25; width: 30%; text-align: left; margin-left: 0;">
+    <h1>View an AddressBook</h1>
+    <form id="view" action="#" th:action="@{/addressbook}" method="GET">
+        View AddressBook ID #  <input type="number" step="1" name="id" id="view-id" /><br>
+        <p><input type="submit" value="View" /></p>
+    </form>
+    <hr style="opacity: 0.25; width: 30%; text-align: left; margin-left: 0;">
+    <h1>Add a Buddy</h1>
+    <form id="add" action="#" th:action="@{/add_buddyinfo}" method="GET">
+        Add to AddressBook ID #  <input type="number" step="1" name="id" id="add-id" /><br>
+        <p><input type="submit" value="Add" /></p>
+    </form>
 </body>
 </html>

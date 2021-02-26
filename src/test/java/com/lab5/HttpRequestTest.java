@@ -9,10 +9,13 @@ import org.springframework.boot.web.server.LocalServerPort;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+/**
+ * @author Paul Roode
+ */
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
 public class HttpRequestTest {
 
-    private static final String DEFAULT_ADDRESSBOOK_HEADER = "AddressBook ID # 3";
+    private static final String ADD_BUDDY_FORM_TEXT = "Add to AddressBook ID #";
 
     @LocalServerPort
     private int port;
@@ -24,8 +27,9 @@ public class HttpRequestTest {
      * Verifies that the landing page content is initialized properly as per Runner::demo().
      */
     @Test
-    public void shouldReturnDefaultAddressBookHeader() {
-        assertThat(this.restTemplate.getForObject("http://localhost:" + port + "/", String.class)).contains(DEFAULT_ADDRESSBOOK_HEADER);
+    public void shouldReturnAddBuddyFormText() {
+        assertThat(this.restTemplate.getForObject("http://localhost:" + port + "/", String.class))
+                .contains(ADD_BUDDY_FORM_TEXT);
     }
 
 }

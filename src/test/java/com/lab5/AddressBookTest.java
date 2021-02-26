@@ -5,6 +5,9 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author Paul Roode
+ */
 public class AddressBookTest {
 
     /**

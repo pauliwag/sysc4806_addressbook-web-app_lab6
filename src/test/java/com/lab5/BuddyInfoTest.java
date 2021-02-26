@@ -4,6 +4,9 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
+/**
+ * @author Paul Roode
+ */
 public class BuddyInfoTest {
 
     /**
