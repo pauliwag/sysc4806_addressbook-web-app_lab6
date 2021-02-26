@@ -2,6 +2,9 @@ package com.lab5;
 
 import javax.persistence.*;
 
+/**
+ * @author Paul Roode
+ */
 @Entity
 public class BuddyInfo {
 
