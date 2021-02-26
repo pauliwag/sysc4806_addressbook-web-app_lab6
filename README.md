@@ -1,5 +1,5 @@
 # AddressBook Web Application v0.6
-## SYSC 4806, Winter 2021 – Agile Development of SaaS (Software Engineering Lab)
+## SYSC 4806, Winter 2021 – Agile Dev of SaaS (Software Engineering Lab)
 ### By: Paul Roode
 
 ---
@@ -18,6 +18,4 @@ https://addressbook-web-app-lab6.herokuapp.com/
 
 ***About***
 
-All AddressBooks and BuddyInfos are listed on the landing page (i.e., index.html) via Thymeleaf. There is a default AddressBook prepopulated with a couple BuddyInfos.
-
-Endpoints and path params for POSTing AddressBooks and POSTing/DELETEing BuffyInfos to/from AddressBooks can be found in the RESTfulController class.
+Use of the SPA UI is pretty straightforward. You can create address books, view their contents, and add custom buddies to them. Note that I created a default address book (id # 3) and prepopulated it with two buddies (id # 1 and 2). All lab 6 requirements are fulfilled. Enjoy!

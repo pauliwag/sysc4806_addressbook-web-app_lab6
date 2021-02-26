@@ -30,7 +30,7 @@ public class MockMvcTest {
      * @throws Exception
      */
     @Test
-    public void shouldReturnDefaultAddressBookHeader() throws Exception {
+    public void shouldReturnViewAddressBookFormText() throws Exception {
         this.mockMvc.perform(get("/")).andDo(print()).andExpect(status().isOk())
                 .andExpect(content().string(containsString(VIEW_ADDRESSBOOK_FORM_TEXT)));
     }
