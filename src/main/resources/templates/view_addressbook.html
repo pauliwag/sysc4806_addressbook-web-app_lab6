@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lab 6 - View AddressBook</title>
+</head>
+<body>
+    <hr style="opacity: 0.25; width: 30%; text-align: left; margin-left: 0;">
+    <h1>Output:</h1>
+    <h2 th:text="'Viewing AddressBook ID # ' + ${addressBook.id}"></h2>
+    <div>
+        <ul th:if="${buddies.empty}">
+            <li>You have no buddies :(</li>
+        </ul>
+        <ul th:each="buddy: ${buddies}">
+            <li th:text="${buddy}"></li>
+        </ul>
+    </div>
+</body>
+</html>
