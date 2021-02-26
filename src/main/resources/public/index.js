@@ -1,16 +1,19 @@
-$(document).ready(function () {
+/**
+ * @author Paul Roode
+ */
+$(document).ready(function() {
 
     // override all of the forms
-    $("#create").submit(onSubmit);
-    $("#view").submit(onSubmit);
-    $("#add").submit(onSubmit);
+    $('#create').submit(onSubmit);
+    $('#view').submit(onSubmit);
+    $('#add').submit(onSubmit);
 
     // override form submission with Ajax calls
     function onSubmit(event) {
         event.preventDefault();
-        var url = $(this).closest('form').attr('action'), data = $(this).closest('form').serialize(),
-            type = $(this).closest('form').attr('method');
-        console.log(url);
+        var url = $(this).closest('form').attr('action');
+        var data = $(this).closest('form').serialize();
+        var type = $(this).closest('form').attr('method');
         $.ajax({
             url: url,
             type: type,
@@ -20,7 +23,7 @@ $(document).ready(function () {
     }
 
     // append a div that will comprise the results
-    $('#body').append("<div id='resultsDiv'></div>");
+    $('#body').append('<div id="resultsDiv"></div>');
 
     function onSuccess(data) {
         $('#resultsDiv').empty().append(data);
