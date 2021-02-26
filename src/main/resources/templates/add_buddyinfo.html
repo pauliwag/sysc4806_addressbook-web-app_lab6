@@ -1,0 +1,17 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org" lang="en">
+<head>
+    <title>Lab 6 - Add BuddyInfo</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <hr style="opacity: 0.25; width: 30%; text-align: left; margin-left: 0;">
+    <h1>Please Input Your Buddy's Info:</h1>
+    <form id="buddy" action="#" th:action="@{'/addressbook/' + ${id} + '/buddy'}" method="POST">
+        Name:  <input type="text" id="name" th:name="name" /><br>
+        Address:  <input type="text" id="address" th:name="address" style="margin-top: 0.8em;" /><br>
+        Phone Number:  <input type="text" id="phone-num" th:name="phone-num" style="margin-top: 0.8em; margin-bottom: 0.2em;" /><br>
+        <p><input type="submit" value="Add Buddy" /></p>
+    </form>
+</body>
+</html>
